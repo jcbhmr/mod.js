@@ -7,7 +7,9 @@ export const go = new Go();
 go.importMeta = import.meta;
 go.argv = [process.argv0, ...process.argv.slice(2)];
 go.env = process.env;
-go.exit = process.exit;
+go.exit = (code) => {
+    throw Object.assign(new Error(`exit ${code}`), { exitCode: code });
+};
 go.fs = fs;
 // TODO: getuid on Windows?
 // @ts-ignore
