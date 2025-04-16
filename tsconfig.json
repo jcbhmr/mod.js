@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+        "allowJs": true,
+        "checkJs": true,
+        "rewriteRelativeImportExtensions": true,
+        "erasableSyntaxOnly": true,
+        "verbatimModuleSyntax": true,
+        "outDir": "dist",
+        "module": "NodeNext",
+        "target": "ESNext",
+        "moduleResolution": "NodeNext",
+    }
+}

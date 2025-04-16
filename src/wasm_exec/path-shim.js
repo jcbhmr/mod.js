@@ -1,3 +1,4 @@
+/*!
 Copyright 2009 The Go Authors.
 Copyright 2025 Jacob Hummer
 
@@ -26,3 +27,13 @@ DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
 THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+*/
+
+export function resolve(...pathSegments) {
+    return pathSegments.join("/");
+}
+const exports = {
+    resolve,
+}
+export { exports as default }
+export { exports as "module.exports" };
