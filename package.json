@@ -1,36 +1,34 @@
 {
-  "name": "mod",
+  "name": "@jcbhmr/mod",
   "type": "module",
-  "version": "1.0.0",
-  "description": "📦 golang.org/x/mod bindings for JavaScript",
+  "version": "0.25.0-alpha.0",
+  "description": "📦 golang.org/x/mod compiled to JS/WASM",
   "bin": {
     "gosumcheck": "./dist/gosumcheck.js"
   },
   "exports": {
-    "modfile": "./dist/modfile.js",
-    "module": "./dist/module.js",
-    "semver": "./dist/semver.js",
-    "sumdb": "./dist/sumdb.js",
-    "sumdb/dirhash": "./dist/sumdb/dirhash.js",
-    "sumdb/note": "./dist/sumdb/note.js",
-    "sumdb/storage": "./dist/sumdb/storage.js",
-    "sumdb/tlog": "./dist/sumdb/tlog.js",
-    "zip": "./dist/zip.js"
+    "./modfile": "./dist/modfile.js",
+    "./module": "./dist/module.js",
+    "./semver": "./dist/semver.js",
+    "./sumdb": "./dist/sumdb.js",
+    "./sumdb/dirhash": "./dist/sumdb/dirhash.js",
+    "./sumdb/note": "./dist/sumdb/note.js",
+    "./sumdb/storage": "./dist/sumdb/storage.js",
+    "./sumdb/tlog": "./dist/sumdb/tlog.js",
+    "./zip": "./dist/zip.js"
   },
   "scripts": {
     "test": "node --test",
-    "test:deno": "deno test -A",
-    "test:bun": "bun test",
-    "build": "cross-env GOOS=js GOARCH=wasm go build -o dist/gosumcheck.wasm golang.org/x/mod/gosumcheck && cross-env GOOS=js GOARCH=wasm go build -o dist/mod.wasm . && tsc --noCheck",
+    "build": "node ./build.ts",
     "lint": "biome check --write . && tsc --noEmit"
   },
   "keywords": [],
   "author": "Jacob Hummer <jcbhmr@outlook.com> (https://jcbhmr.com)",
   "license": "BSD-3-Clause",
   "devDependencies": {
-    "@biomejs/biome": "^1.9.4",
-    "@types/node": "^22.14.1",
-    "cross-env": "^7.0.3",
+    "@biomejs/biome": "^2.0.6",
+    "@types/node": "^24.0.8",
+    "execa": "^9.6.0",
     "typescript": "^5.8.3"
   }
 }
