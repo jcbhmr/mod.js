@@ -19,7 +19,7 @@
   },
   "scripts": {
     "test": "node --test",
-    "build": "node ./build.ts",
+    "build": "tsc --noCheck",
     "lint": "biome check --write . && tsc --noEmit"
   },
   "keywords": [],
