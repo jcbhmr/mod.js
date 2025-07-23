@@ -1,7 +1,7 @@
 {
   "name": "@jcbhmr/mod",
   "type": "module",
-  "version": "0.25.0-alpha.0",
+  "version": "0.26.0-alpha.0",
   "description": "📦 golang.org/x/mod compiled to JS/WASM",
   "bin": {
     "gosumcheck": "./dist/gosumcheck.js"
@@ -28,7 +28,10 @@
   "devDependencies": {
     "@biomejs/biome": "^2.0.6",
     "@types/node": "^24.0.8",
-    "execa": "^9.6.0",
+    "tempy": "^3.1.0",
     "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "execa": "^9.6.0"
   }
 }
