@@ -15,5 +15,5 @@ rsc.io/sampler v1.3.0/go.mod h1:T1hPZKmBbMNahiBKFy5HrXp6adAjACjK9JXDnKaTXpA=
 test("gosumcheck", async (t) => {
     const testSumPath = await temporaryWrite(testSum, { name: "test.sum" })
     process.env.GONOSUMDB = "*/text" // rsc.io/text but not golang.org/x/text
-    await $`node ${join(import.meta.dirname, "../src/gosumcheck.ts")} -v ${testSumPath}`
+    await $`${join(import.meta.dirname, "../src/gosumcheck.ts")} -v ${testSumPath}`
 })
