@@ -1,0 +1,15 @@
+package jcbhmr:mod@0.26.0-rc1;
+
+interface semver {
+    build: func(v: string) -> string;
+    canonical: func(v: string) -> string;
+    compare: func(v: string, w: string) -> s32;
+    is-valid: func(v: string) -> bool;
+    major: func(v: string) -> string;
+    major-minor: func(v: string) -> string;
+    max: func(v: string, w: string) -> string;
+    prerelease: func(v: string) -> string;
+    sort: func(%list: list<string>);
+
+    // TODO: type by-version
+}

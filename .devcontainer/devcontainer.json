@@ -1,0 +1,19 @@
+{
+    "image": "mcr.microsoft.com/devcontainers/base:debian",
+    "features": {
+        "ghcr.io/devcontainers/features/rust": {},
+        "ghcr.io/devcontainers/features/go": {}
+    },
+    "updateContentCommand": {
+        "1": "curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash && cargo binstall -y wkg wasm-tools",
+        "2": "cd \"$(mktemp -d)\" && wget https://github.com/tinygo-org/tinygo/releases/download/v0.38.0/tinygo_0.38.0_amd64.deb && sudo dpkg -i tinygo_0.38.0_amd64.deb"
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "bytecodealliance.wit-idl",
+                "golang.go"
+            ]
+        }
+    }
+}

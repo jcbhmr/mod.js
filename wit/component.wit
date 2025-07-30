@@ -1,0 +1,43 @@
+package jcbhmr:mod@0.26.0-rc1;
+
+interface modfile {}
+
+interface sumdb {}
+
+interface zip {
+    // use module.{version};
+    // use wasi:io/streams.{output-stream};
+
+    // max-zip-file: func() -> u64;
+    // max-go-mod: func() -> u64;
+    // max-license: func() -> u64;
+
+    // create: func(w: output-stream, m: version, files: list<file>) -> result<_, error>;
+    // create-from-dir: func(w: output-stream, m: version, dir: string) -> result<_, error>;
+    // create-from-vcs: func(w: output-stream, m: version, repo-root: string, revision: string, subdir: string) -> result<_, error>;
+    // unzip: func(dir: string, m: version, zip-file: string) -> result<_, error>;
+
+    // record checked-files {
+    //     valid: list<string>,
+    //     omitted: list<file-error>,
+    //     invalid: list<file-error>,
+    //     size-error: option<string>,
+    // }
+    // check-dir: func(dir: string) -> tuple<checked-files, string>;
+    // check-files: func(files: list<file>) -> tuple<checked-files, string>;
+    // check-zip: func(m: version, zip-file: string) -> tuple<checked-files, string>;
+    // checked-files-err: func(self: checked-files) -> result<_, string>;
+}
+
+world mod {
+    // tinygo wasip2 targets wasi:cli/command@0.2.0
+    include wasi:cli/imports@0.2.0;
+    // zip needs streams
+    include wasi:io/imports@0.2.0;
+
+    export modfile;
+    export module;
+    export semver;
+    export sumdb;
+    export zip;
+}
