@@ -1,0 +1,30 @@
+{
+  "name": "@jcbhmr/mod",
+  "version": "0.1.0",
+  "exports": {
+    "./gosumcheck": "./gosumcheck/main.ts",
+    "./modfile": "./modfile/mod.ts",
+    "./module": "./module/mod.ts",
+    "./semver": "./semver/mod.ts",
+    "./sumdb": "./sumdb/mod.ts",
+    "./sumdb/dirhash": "./sumdb/dirhash/mod.ts",
+    "./sumdb/note": "./sumdb/note/mod.ts",
+    "./sumdb/storage": "./sumdb/storage/mod.ts",
+    "./sumdb/tlog": "./sumdb/tlog/mod.ts",
+    "./zip": "./zip/mod.ts"
+  },
+  "tasks": {
+    "dev": "deno test --watch"
+  },
+  "license": "MIT",
+  "imports": {
+    "@std/assert": "jsr:@std/assert@^1.0.19",
+    "@std/encoding": "jsr:@std/encoding@^1.0.10",
+    "@std/testing": "jsr:@std/testing@^1.0.18",
+    "arktype": "npm:arktype@^2.2.0",
+    "array-shuffle": "npm:array-shuffle@^4.1.0",
+    "execa": "npm:execa@^9.6.1",
+    "type-fest": "npm:type-fest@^5.6.0"
+  },
+  "exclude": ["./mod/"]
+}
